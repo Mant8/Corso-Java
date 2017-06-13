@@ -1,0 +1,7 @@
+Tasto Dx sul progetto -> Build Path -> Configure Build Path -> Libraries -> Add external Jar
+
+My connector J è lo strumento che ti permette di creare un collegamento dalla tua applicazione Java
+ed il database.
+
+Creare un New SCHEMA in WORKBENCH chiamato CORSO, MYSQL lo porta direttamente in minuscolo ma
+quando verrà richiamato dovremmo scriverlo sempre in maiuscolo.
