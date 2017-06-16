@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+
+
 public class GestioneCliente {
 
 	public static boolean verificaRegistrazione(Cliente cliente) {
@@ -39,6 +41,9 @@ public class GestioneCliente {
 		
 		return lista ;
 	}
+
+	
+	
 	
 	public static List<Dolce> listaDolci() {
 		
@@ -50,6 +55,22 @@ public class GestioneCliente {
 		
 		return lista ;
 	}
+	
+	public List<String> elencoDolci() {
+		ServicesCrud crud = new ServicesCrud("jpa-Pasticceria");
+		List<String> nomiDolci = new ArrayList<String>();
+		nomiDolci = crud.jpaRead("select distinct (p.nome)  from Dolce p").getResultList();
+		return nomiDolci;
+	}
+	
+	public List<String> elencoIngredienti() {
+		ServicesCrud crud = new ServicesCrud("jpa-Pasticceria");
+		List<String> nomiIngredienti = new ArrayList<String>();
+		nomiIngredienti  = crud.jpaRead("select distinct (i.ingredienteBase)  from Dolce i").getResultList();
+		return nomiIngredienti ;
+	}
+
+	
 	
 //	public static List<Integer> listaOrdiniPerCliente(int idCliente) {
 //		
