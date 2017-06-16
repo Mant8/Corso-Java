@@ -1,15 +1,35 @@
 package gestionalePasticceria;
 
-public class Cliente {
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cliente", schema = "pasticceria")
+public class Cliente {
+	
+	@Id
+	@GeneratedValue
+	private int codiceCliente;
+	
 	private String nome;
 	private String cognome;
 	private String codiceFiscale;
+	
+	@ManyToMany
+	private List<Dolce> listaDolci;
 	
 	public Cliente(String nome, String cognome, String codiceFiscale) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
+		
+		listaDolci = new ArrayList<>();
 	}
 	public Cliente() {
 		super();
