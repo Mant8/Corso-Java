@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,13 +17,13 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue
-	private int codiceCliente;
+	private Integer codiceCliente;
 	
 	private String nome;
 	private String cognome;
 	private String codiceFiscale;
 	
-	@ManyToMany
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "codiceCliente")
 	private List<Dolce> listaDolci;
 	
 	public Cliente(String nome, String cognome, String codiceFiscale) {
