@@ -71,6 +71,7 @@ public class Cliente {
 	public void setListaDolci(List<Dolce> listaDolci) {
 		this.listaDolci = listaDolci;
 	}
+	
 	@Override
 	public String toString() {
 		return "Cliente-Tossico : =" + nome + ", cognome=" + cognome + ", codiceFiscale=" + codiceFiscale + "]";

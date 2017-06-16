@@ -66,6 +66,22 @@ public class Dolce {
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Cliente getCodiceCliente() {
+		return codiceCliente;
+	}
+
+	public void setCodiceCliente(Cliente codiceCliente) {
+		this.codiceCliente = codiceCliente;
+	}
 
 	@Override
 	public String toString() {

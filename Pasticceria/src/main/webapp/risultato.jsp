@@ -26,7 +26,13 @@
 						</header>
 
 						<footer>
-							<p>Hai effettuato l'ordine correttamente</p><br/>
+							<p>Hai effettuato l'ordine correttamente</p>
+							<ul>
+								<li><%=request.getAttribute("ingrediente") %></li>
+								<li><%=request.getAttribute("tipo") %></li>
+								<li><%=request.getAttribute("grammi") %></li>
+							</ul>
+							<br/>
                             <p>Per effettuare un nuovo ordine clicca <a href="#">qui</a></p>
 						</footer>
 					</section>

@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-
-
 public class GestioneCliente {
 
-	public static boolean verificaRegistrazione(Cliente cliente) {
+	public static boolean verificaRegistrazione(String codiceFiscale, String nome, String cognome) {
 		boolean verifica = false;
-		String codFiscale = cliente.getCodiceFiscale().toUpperCase();
+		codiceFiscale.toUpperCase();
 		String regexCF = "[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]";
-		if (cliente.getNome() != null && cliente.getCognome() != null && Pattern.matches(regexCF, codFiscale)) {
+		if (nome != null && cognome != null && Pattern.matches(regexCF, codiceFiscale)) {
 			verifica = true;
 		} else {
 			verifica = false;
@@ -29,7 +27,7 @@ public class GestioneCliente {
 				return true;
 		return false;
 	}
-	
+
 	
 	public static List<Cliente> listaClienti() {
 		
@@ -42,8 +40,6 @@ public class GestioneCliente {
 		return lista ;
 	}
 
-	
-	
 	
 	public static List<Dolce> listaDolci() {
 		
