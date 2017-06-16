@@ -1,5 +1,11 @@
 /target/
+<<<<<<< HEAD
 /.classpath
 /.project
 /guida
 /.gitignore
+=======
+/.settings/
+/.classpath
+/.project
+>>>>>>> branch 'master' of https://github.com/Mant8/Corso-Java.git
