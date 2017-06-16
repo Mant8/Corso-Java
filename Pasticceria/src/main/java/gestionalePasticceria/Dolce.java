@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,11 +26,9 @@ public class Dolce {
 	private String ingredienteBase;
 	private int quantita;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
-	@JoinTable(name = "RelazioneClienteDolce", schema = "pasticceria", joinColumns = {
-			@JoinColumn(name = "id") }, inverseJoinColumns = {
-					@JoinColumn(name = "codiceCliente") })
-	private List<Cliente> listaCliente;
+	@ManyToOne
+	@JoinColumn(name = "codiceCliente")
+	private Cliente codiceCliente;
 
 	public Dolce(String nome, String ingredienteBase, int quantita) {
 		
@@ -37,7 +36,7 @@ public class Dolce {
 		this.ingredienteBase = ingredienteBase;
 		this.quantita = quantita;
 		
-		listaCliente = new ArrayList<>();
+		codiceCliente = null;
 	}
 
 	public Dolce() {
