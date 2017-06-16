@@ -53,6 +53,22 @@ public class Cliente {
 	public void setCodiceFiscale(String codiceFiscale) {
 		this.codiceFiscale = codiceFiscale;
 	}
+	
+
+	public int getCodiceCliente() {
+		return codiceCliente;
+	}
+	public void setCodiceCliente(int codiceCliente) {
+		this.codiceCliente = codiceCliente;
+	}
+	
+	
+	public List<Dolce> getListaDolci() {
+		return listaDolci;
+	}
+	public void setListaDolci(List<Dolce> listaDolci) {
+		this.listaDolci = listaDolci;
+	}
 	@Override
 	public String toString() {
 		return "Cliente-Tossico : =" + nome + ", cognome=" + cognome + ", codiceFiscale=" + codiceFiscale + "]";
